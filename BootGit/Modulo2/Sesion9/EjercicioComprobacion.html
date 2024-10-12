@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulación del DOM </title>
+  <style>
+    .caja1, .caja2, .caja3 {
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid black;
+    }
+
+    .caja2 img {
+      transition: transform 0.3s ease;
+    }
+
+    .caja3 {
+      transition: font-size 0.3s ease;
+    }
+
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caja1 container">
+    <div id="text1">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio
+        accusamus totam rem et ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis
+        enim porro dolor quis?</p>
+    </div>
+
+    <div id="text2" class="oculto">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio
+        accusamus totam rem et ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis
+        enim porro dolor quis?</p>
+    </div>
+  </div>
+
+  <div class="caja2" id="caja2">
+    <img src="/home/xlegitgirlx/Escritorio/UTFSM/BootCamp/Modulo_2/BootGit/Modulo2/Sesion9/ww.png" id="img" width="200" alt="Pacman">
+  </div>
+
+  <div class="caja3" id="caja3">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente laudantium aliquid rem
+      consequatur eius nemo alias provident sunt et voluptate in aut, quas hic quia dolores, corrupti voluptatem
+      reiciendis facere.
+    </p>
+  </div>
+
+  <script>
+    // Caja 1: Mostrar el segundo div al pasar el mouse sobre el primero y ocultarlo al salir
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+
+    text1.addEventListener('mouseenter', function() {
+      text2.classList.remove('oculto');
+    });
+
+    text1.addEventListener('mouseleave', function() {
+      text2.classList.add('oculto');
+    });
+
+    // Caja 2: Agrandar la imagen al hacer clic y reducirla al quitar el clic
+    const caja2 = document.getElementById('caja2');
+    const img = document.getElementById('img');
+
+    caja2.addEventListener('click', function() {
+      img.style.transform = 'scale(2)';
+    });
+
+    caja2.addEventListener('mouseleave', function() {
+      img.style.transform = 'scale(1)';
+    });
+
+    // Caja 3: Agrandar el texto al hacer doble clic
+    const caja3 = document.getElementById('caja3');
+
+    caja3.addEventListener('dblclick', function() {
+      caja3.style.fontSize = '2rem';
+    });
+  </script>
+
+</body>
+</html>

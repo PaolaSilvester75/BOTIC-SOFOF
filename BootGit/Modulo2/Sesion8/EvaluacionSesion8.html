@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco</title>
+</head>
+<body>
+
+<script>
+  // Definir los clientes registrados
+  const clientes = [
+    { nombre: "Patricia Torres", id: "123", clave: "1111", saldo: 1000 },
+    { nombre: "Carlos Muñoz", id: "456", clave: "2222", saldo: 2000 },
+    { nombre: "María Pérez", id: "789", clave: "3333", saldo: 3000 }
+  ];
+
+  
+  function iniciarSesion() {
+    let identificador = prompt("Ingrese su identificador:");
+    let clave = prompt("Ingrese su clave:");
+    
+   
+    let cliente = clientes.find(c => c.id === identificador && c.clave === clave);
+
+    if (cliente) {
+      alert("Bienvenido " + cliente.nombre);
+      mostrarMenu(cliente);
+    } else {
+      alert("Identificador o clave incorrectos. Inténtelo de nuevo.");
+      iniciarSesion(); 
+    }
+  }
+  function mostrarMenu(cliente) {
+    let opcion = "";
+
+    while (opcion !== "4") {
+      opcion = prompt("Seleccione que desea hacer:\n" +
+                      "1.- Ver saldo\n" +
+                      "2.- Realizar giro\n" +
+                      "3.- Realizar depósito\n" +
+                      "4.- Salir");
+
+      switch (opcion) {
+        case "1":
+          alert("Su saldo actual es: " + cliente.saldo);
+          break;
+
+        case "2":
+          realizarGiro(cliente);
+          break;
+
+        case "3":
+          realizarDeposito(cliente);
+          break;
+
+        case "4":
+          alert("Gracias por utilizar el servicio de Banca en Línea.");
+          break;
+
+        default:
+          alert("Opción no válida. Por favor, seleccione una opción válida.");
+      }
+    }
+  }
+
+  function realizarGiro(cliente) {
+    let montoGiro = parseFloat(prompt("Su saldo actual es: " + cliente.saldo + "\nIngrese el monto que desea girar:"));
+
+    if (isNaN(montoGiro) || montoGiro <= 0) {
+      alert("El monto ingresado no es válido.");
+    } else if (montoGiro > cliente.saldo) {
+      alert("El monto supera el saldo disponible.");
+    } else {
+      cliente.saldo -= montoGiro;
+      alert("Giro realizado. Su nuevo saldo es " + cliente.saldo);
+    }
+  }
+
+  function realizarDeposito(cliente) {
+    let montoDeposito = parseFloat(prompt("Su saldo actual es: " + cliente.saldo + "\nIngrese el monto que desea depositar:"));
+
+    if (isNaN(montoDeposito) || montoDeposito <= 0) {
+      alert("El monto ingresado no es válido.");
+    } else {
+      cliente.saldo += montoDeposito;
+      alert("Depósito realizado. Su nuevo saldo es " + cliente.saldo);
+    }
+  }
+  iniciarSesion();
+</script>
+
+</body>
+</html>
