@@ -1,0 +1,20 @@
+IdCliente	Cliente	    Ciudad
+101	        Martin	    Santiago
+107	        Herman	    Valparaíso      TABLA CLIENTE
+110	        Pedro	    Concepción
+
+
+IdOrden	    Fecha	    IdCliente
+2301	    23/02/2020	    101
+2302	    25/02/2020	    107        Tabla ORDENES
+2303	    27/02/2020	    110
+
+
+IdOrden	    Código	Artículo	Cantidad	   Precio
+2301	    3786	Red	            3	        35
+2301	    4011	Raqueta	        6	        65
+2301	    9132	Paq-3	        8	        4,75
+2302	    5794	Paq-6	        4	        5
+2303	    4011	Raqueta	        2	        65
+2303	    3141	Funda	        2	        10
+
