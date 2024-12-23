@@ -1,0 +1,7 @@
+Django==3.2.12
+Flask==2.3.2
+httplib2==0.20.2
+Jinja2==3.1.2
+mysql-connector==2.2.9
+mysql-connector-python==8.0.5
+virtualenvwrapper==6.1.1

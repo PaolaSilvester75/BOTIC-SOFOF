@@ -1,0 +1,24 @@
+makemigrations: Este comando crea nuevos archivos de migración basados en los cambios realizados en los modelos de tus aplicaciones.
+Django Docs
+
+migrate: Aplica las migraciones a la base de datos, creando o modificando las tablas según las definiciones de los modelos.
+Django Docs
+
+shell: Inicia una sesión interactiva de Python con el entorno de Django cargado, permitiéndote interactuar con los modelos y otros componentes del proyecto.
+
+dbshell: Abre una consola interactiva de la base de datos configurada en tu proyecto, permitiéndote ejecutar comandos SQL directamente.
+Django Docs
+
+showmigrations: Muestra una lista de todas las migraciones disponibles y su estado (aplicadas o pendientes) para cada aplicación en el proyecto.
+Django Docs
+
+dumpdata: Exporta los datos de la base de datos en formato JSON, lo que puede ser útil para crear copias de seguridad o transferir datos entre entornos.
+Django Docs
+
+test: Ejecuta las pruebas definidas en el proyecto, permitiéndote verificar que el código funciona correctamente.
+Django Docs
+
+testserver: Inicia un servidor de desarrollo con datos de prueba, útil para probar la aplicación en un entorno controlado.
+Django Docs
+
+diffsettings: Muestra las diferencias entre la configuración actual y la configuración predeterminada de Django, ayudándote a identificar cambios en la configuración

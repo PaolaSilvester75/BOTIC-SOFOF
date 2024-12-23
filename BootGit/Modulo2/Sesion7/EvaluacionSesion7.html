@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual</title>
+</head>
+<body>
+
+<script>
+  function mostrarBoletasYPagos() {
+    var subopcion = prompt("Seleccione una opción:\n1.- Ver Boleta \n2.- Pagar cuenta");
+    if (subopcion == "1") {
+      alert("Haga clic aquí para descargar su boleta.");
+    } else if (subopcion == "2") {
+      alert("Usted está siendo transferido. Espere por favor...");
+    } else {
+      alert("Opción no válida. Por favor, inténtelo de nuevo.");
+    }
+  }
+
+  function mostrarSenalYLlamadas() {
+    var subopcion = prompt("Seleccione una opción:\n1.- Problemas con la señal \n2.- Problemas con las llamadas");
+    if (subopcion == "1" || subopcion == "2") {
+      var solicitud = prompt("A continuación escriba su solicitud");
+      alert("Estimado usuario, su solicitud: '" + solicitud + "' ha sido ingresada con éxito. Pronto será contactado por uno de nuestros ejecutivos.");
+    } else {
+      alert("Opción no válida. Por favor, inténtelo de nuevo.");
+    }
+  }
+
+  function mostrarOfertaComercial() {
+    var respuesta = prompt("¡Mentel tiene una oferta comercial acorde a tus necesidades!\nPara conocer más información y ser asesorado personalmente por un ejecutivo escribe 'SI' y un ejecutivo te llamará. De lo contrario ingrese 'NO'");
+    if (respuesta.toUpperCase() == "SI") {
+      alert("Un ejecutivo contactará con usted.");
+    } else if (respuesta.toUpperCase() == "NO") {
+      alert("Gracias por preferir nuestros servicios.");
+    } else {
+      alert("Opción no válida.");
+    }
+  }
+
+  function mostrarOtrasConsultas() {
+    var consulta = prompt("A continuación escriba su consulta");
+    alert("Estimado usuario, su consulta: '" + consulta + "' ha sido ingresada con éxito. Pronto será contactado por uno de nuestros ejecutivos.");
+  }
+
+  // Menú principal
+  var opcion = prompt("¡Hola! Soy Eva, tu asistente virtual del Servicio al Cliente de Mentel. Estoy aquí para ayudarte en lo que necesides.\nEscribe el número de la opción que buscas: \n1.- Boletas y Pagos \n2.- Señal y llamadas \n3.- Oferta comercial  \n4.- Otras consultas");
+
+  // Evaluar la opción ingresada
+  if (opcion == "1") {
+    mostrarBoletasYPagos();
+  } else if (opcion == "2") {
+    mostrarSenalYLlamadas();
+  } else if (opcion == "3") {
+    mostrarOfertaComercial();
+  } else if (opcion == "4") {
+    mostrarOtrasConsultas();
+  } else {
+    alert("La opción ingresada no es válida. Gracias por preferir nuestros servicios.");
+  }
+</script>
+
+</body>
+</html>

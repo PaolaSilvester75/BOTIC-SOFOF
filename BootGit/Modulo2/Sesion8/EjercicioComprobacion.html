@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú</title>
+</head>
+<body>
+<script>
+  
+  function mostrarMenu() {
+    let opcion = 0;
+    while (opcion !== "5") {
+      // Mostrar el menú
+      opcion = prompt("Selecciona una opción del menú:\n" +
+                      "1. Ver fecha y hora actual\n" +
+                      "2. Generar un número aleatorio\n" +
+                      "3. Mostrar saludo personalizado\n" +
+                      "4. Saber si un número es par o impar\n" +
+                      "5. Salir");
+
+      switch(opcion) {
+        case "1":
+          
+          const fechaActual = new Date();
+          alert("La fecha y hora actual es: " + fechaActual.toLocaleString());
+          break;
+        case "2":
+          
+          const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+          alert("Número aleatorio generado: " + numeroAleatorio);
+          break;
+        case "3":
+          
+          const nombre = prompt("Ingresa tu nombre:");
+          alert("Hola, " + nombre + "! Bienvenido a nuestro menú.");
+          break;
+        case "4":
+          
+          const numero = parseInt(prompt("Ingresa un número:"));
+          if (numero % 2 === 0) {
+            alert("El número " + numero + " es par.");
+          } else {
+            alert("El número " + numero + " es impar.");
+          }
+          break;
+        case "5":
+          
+          alert("Gracias por utilizar el menú. ¡Hasta pronto!");
+          break;
+        default:
+          
+          alert("Opción no válida. Por favor, selecciona una opción entre 1 y 5.");
+      }
+    }
+  }
+  mostrarMenu();
+</script>
+
+</body>
+</html>

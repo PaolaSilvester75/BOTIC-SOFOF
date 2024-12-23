@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulación del DOM</title>
+  <style>
+    #text1, #text2, #caja1, #caja2, #caja3 {
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid black;
+    }
+
+    #text1 {
+      background-color: orange;
+    }
+
+    #text2 {
+      background-color: purple;
+      color: white;
+      display: none;
+    }
+
+    #caja1 {
+      background-color: yellow;
+    }
+
+    #caja2 img {
+      width: 200px;
+      transition: all 0.5s ease;
+    }
+
+    #caja3 {
+      background-color: lightgray;
+      font-size: 16px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <div id="text1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat libero vitae eros cursus, in scelerisque urna malesuada.
+  </div>
+  
+  <div id="text2">
+    Este es el segundo bloque de texto que se mostrará cuando pases el mouse por el primer bloque.
+  </div>
+  
+  <div id="caja1">
+    <img src="/home/xlegitgirlx/Escritorio/UTFSM/BootCamp/Modulo_2/BootGit/Modulo2/Sesion10/ww.png" id="imagen-pacman" alt="Imagen de prueba">
+  </div>
+
+  <div id="caja3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat libero vitae eros cursus, in scelerisque urna malesuada
+  </div>
+
+  <script>
+    $("#text1").mouseenter(function () {
+      $("#text2").show();
+    }).mouseleave(function () {
+      $("#text2").hide();
+    });
+
+    $("#caja1").click(function () {
+      $("#imagen-pacman").css("transform", "scale(2)");
+    });
+
+    $("#caja1").mouseleave(function () {
+      $("#imagen-pacman").css("transform", "scale(1)");
+    });
+
+    $("#caja3").dblclick(function () {
+      $(this).css("font-size", "32px");
+    });
+  </script>
+
+</body>
+</html>

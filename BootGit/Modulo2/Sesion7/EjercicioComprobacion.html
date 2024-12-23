@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesion7</title>
+  <!-- Bootstrap CSS para el botón (opcional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h3>Comparador de Números</h3>
+    
+    <!-- Formulario para ingresar los números -->
+    <div class="mb-3">
+      <label for="numero1" class="form-label">Ingresa el primer número:</label>
+      <input type="number" id="numero1" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+      <label for="numero2" class="form-label">Ingresa el segundo número:</label>
+      <input type="number" id="numero2" class="form-control">
+    </div>
+    
+    <button id="compararBtn" class="btn btn-primary">Aceptar</button>
+  </div>
+
+  <script>
+    document.getElementById("compararBtn").addEventListener("click", function() {
+      // Obtener los valores de los inputs
+      var num1 = parseFloat(document.getElementById("numero1").value);
+      var num2 = parseFloat(document.getElementById("numero2").value);
+      
+      // Variable para almacenar el mensaje de resultado
+      var mensaje = "";
+      
+      // Comparar los números y generar el mensaje correspondiente
+      if (num1 > num2) {
+        mensaje = num1 + " es mayor que " + num2;
+      } else if (num1 < num2) {
+        mensaje = num2 + " es mayor que " + num1;
+      } else {
+        mensaje = num1 + " y " + num2 + " son iguales.";
+      }
+      
+      // Mostrar el mensaje en un pop-up
+      alert(mensaje);
+    });
+  </script>
+
+  <!-- Bootstrap JS (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
