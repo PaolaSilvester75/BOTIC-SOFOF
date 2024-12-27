@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Laboratorios</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Lista de Laboratorios</h1>
+    <a href="{% url 'insertar_laboratorio' %}">Agregar Nuevo Laboratorio</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for laboratorio in laboratorios %}
+            <tr>
+                <td>{{ laboratorio.nombre }}</td>
+                <td>{{ laboratorio.ciudad }}</td>
+                <td>
+                    <a href="{% url 'editar_laboratorio' laboratorio.id %}">Editar</a>
+                    <a href="{% url 'eliminar_laboratorio' laboratorio.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos con Precio Menor o Igual a 2500</title>
+</head>
+<body>
+    <h1>Productos con Precio Menor o Igual a 2500</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                El producto: {{ producto.nombre }} tiene un precio de: {{ producto.precio }}.
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

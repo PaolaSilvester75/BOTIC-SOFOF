@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Laboratorio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>¿Está seguro de que desea eliminar este laboratorio?</h1>
+    <p><strong>Nombre:</strong> {{ laboratorio.nombre }}</p>
+    <p><strong>Ciudad:</strong> {{ laboratorio.ciudad }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'listar_laboratorios' %}">Volver</a>
+</body>
+</html>

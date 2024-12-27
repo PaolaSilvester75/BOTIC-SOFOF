@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                El producto: {{ producto.nombre }} se vence en {{ producto.nombre}}, con un precio de: {{ producto.precio }}.
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

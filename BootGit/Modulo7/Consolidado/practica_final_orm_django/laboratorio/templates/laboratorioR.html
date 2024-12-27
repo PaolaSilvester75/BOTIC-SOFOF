@@ -1,0 +1,87 @@
+<!-- templates/laboratory/list.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Información de Laboratorios</h2>
+    <a href="{% url 'laboratory_create' %}" class="btn btn-primary">Agregar Laboratorio</a>
+    
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>País</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lab in laboratories %}
+            <tr>
+                <td>{{ lab.nombre }}</td>
+                <td>{{ lab.ciudad }}</td>
+                <td>{{ lab.pais }}</td>
+                <td><a href="{% url 'laboratory_edit' lab.pk %}" class="btn btn-info">Actualizar</a></td>
+                <td><a href="{% url 'laboratory_delete' lab.pk %}" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+<!-- templates/laboratory/create.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Ingresar los Datos del Laboratorio</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre del lab" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="ciudad" class="form-control" placeholder="Ingrese la Ciudad del Lab" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="pais" class="form-control" placeholder="Ingrese el País del Lab" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- templates/laboratory/edit.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Actualizar Laboratorio</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="nombre" value="{{ laboratory.nombre }}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="ciudad" value="{{ laboratory.ciudad }}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="pais" value="{{ laboratory.pais }}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Confirmar Eliminación</h2>
+    <p>Estas seguro que deseas eliminar el laboratorio: "{{ laboratory.nombre }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'laboratory_list' %}" class="btn btn-secondary">Retornar</a>
+    </form>
+</div>
+{% endblock %}

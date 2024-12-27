@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Producto</title>
+</head>
+<body>
+    <h1>Resultado de la Búsqueda</h1>
+    {% if producto %}
+    <p>El producto: {{ producto.nombre }} es fabricado por {{ producto.fabricante_nombre }}</p>
+    {% else %}
+    <p>Producto no encontrado.</p>
+    {% endif %}
+</body>
+</html>
